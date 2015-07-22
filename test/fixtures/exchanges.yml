@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  giver: MyString
+  taker: MyString
+  book: MyString
+  status: MyString
+
+two:
+  giver: MyString
+  taker: MyString
+  book: MyString
+  status: MyString
