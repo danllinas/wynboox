@@ -1,5 +1,5 @@
 class Exchange < ActiveRecord::Base
-  has_many :users
-  has_many :books
+  belongs_to :users
+  belongs_to :books
 
 end

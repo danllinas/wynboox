@@ -1,0 +1,10 @@
+<%= provide(:title, @user.username) %>
+<h1>
+  <%= gravatar_image(@user) %>
+  <p>
+    <%= @user.username %>, in <%= @user.city %>
+  </p>
+</h1>
+<p>
+  <%= link_to 'Update info', edit_user_path(@user) %> | <%= link_to 'Home', root_path %>
+</p>

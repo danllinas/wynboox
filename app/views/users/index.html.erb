@@ -1,0 +1,5 @@
+<%= provide(:title, "User Directory") %>
+
+<% @users.each do |user| %>
+<%= user.username %>&emsp;<%= user.city.capitalize %>&emsp;<%= link_to 'Edit User', edit_user_path(user) %>&emsp;<%= link_to 'Destroy User', user, method: :delete, data: { confirm: 'Are you sure?'} %><br>
+<% end %>

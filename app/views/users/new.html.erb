@@ -1,0 +1,44 @@
+<%= provide(:title, "WynRegister") %>
+<h1>Sign up</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field  :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest, 'Password' %><br>
+    <%= f.password_field :password_digest %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, 'Confirm Password' %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= select_tag(:state, options_for_select([['FL', 'FL'], ['Other', 'other']])) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
