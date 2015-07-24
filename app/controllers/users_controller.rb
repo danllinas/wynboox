@@ -26,13 +26,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice:
-        "You have successfully updated your info."}
-      else
-        render edit_user_path
-      end
+    if @user.update(user_params)
+      redirect_to @user, notice: "You have successfully updated your info."
+    else
+      redirect_to edit_user_path(@user), notice: "Error. Please update all fields."
     end
   end
 
