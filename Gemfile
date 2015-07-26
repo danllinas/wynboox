@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 gem 'rails_12factor'
 gem 'pg'
 gem 'better_errors'
+gem 'httparty'
+gem 'nokogiri'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use SCSS for stylesheets

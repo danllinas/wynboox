@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def index
     @users = User.all
   end
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to @user,
-      notice: "You've successfully registered for WynBooX!" #notice not working.
+      notice: "You've successfully registered for WynBooX!"
     else
       render new_user_path
     end
