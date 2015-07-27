@@ -14,6 +14,7 @@
       <%= f.hidden_field :title, value: give_me_title(item_number) %>
       <%= f.hidden_field :author, value: give_me_author(item_number) %>
       <%= f.hidden_field :status, value: "available" %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit "Add book to the Database" %>
     <% end %>
     <br>
@@ -21,6 +22,7 @@
 <% end %>
 
 <h1>Books currently in the database: </h1>
+<h3>Click on a book to request it from the owner.</h3>
 
 <table>
   <thead>
@@ -28,6 +30,7 @@
       <th>Title</th>
       <th>Author</th>
       <th>Status</th>
+      <th>Book Owner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,6 +41,7 @@
         <td><%= book.title %></td>
         <td><%= book.author %></td>
         <td><%= book.status %></td>
+        <td><%= book.user.username %></td>
         <td><%= link_to 'Show', book %></td>
       </tr>
     <% end %>
