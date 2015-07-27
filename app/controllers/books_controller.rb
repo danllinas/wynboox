@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  before_action :require_user, except: [:index]
 
   def index
     if params[:search]
@@ -17,6 +16,10 @@ class BooksController < ApplicationController
     else
       render new_book_path
     end
+  end
+
+  def new
+    @book = Book.new
   end
 
   def show
