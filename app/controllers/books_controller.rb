@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       redirect_to @book
-      # notice: "You sucessfuly added your title to the database." I don't know why this gives me a syntax error!!!!!!
+      flash[:success] = "You sucessfuly added your title to the database."
     else
       render new_book_path
     end

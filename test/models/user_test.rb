@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   fixtures :users
 
   def setup
-    @user = User.new(username: "supertestuser", email: "tester@tests.com", password_digest: "foobar", password_confirmation: "foobar", city: "Miami", state: "FL")
+    @user = User.new(username: "supertestuser", email: "tester@tests.com", password: "foobar", password_confirmation: "foobar", city: "Miami", state: "FL")
   end
 
   test "should be valid" do
@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "password should not be blank" do
-    @user.password_digest = @user.password_confirmation = " " * 8
+    @user.password = @user.password_confirmation = " " * 8
     assert_not @user.valid?
   end
 
