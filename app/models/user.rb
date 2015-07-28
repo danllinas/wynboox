@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
-  has_many :books
-  has_many :exchanges
+  has_many :books, dependent: :destroy
+  has_many :exchanges, dependent: :destroy
   has_secure_password
   before_save {email.downcase!}
   validates :username, presence: true, length: { maximum: 50}, uniqueness: true

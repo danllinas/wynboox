@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     end
     @books = Book.all
     @book = Book.new
+    @exchange = Exchange.new
   end
 
   def create
