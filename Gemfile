@@ -5,6 +5,7 @@ gem 'pg'
 gem 'better_errors'
 gem 'httparty'
 gem 'nokogiri'
+gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use SCSS for stylesheets
