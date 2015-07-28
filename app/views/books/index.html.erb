@@ -60,7 +60,7 @@
             <%= f.hidden_field :borrower_id, value: current_user.id %>
             <%= f.hidden_field :book_id, value: book.id %>
             <% if book.status == "available" %>
-              <td><%= f.submit "Request This Book!" %></td>
+            <td><%= f.submit "Request This Book!" %></td>
             <% else %>
               <td>NOT AVAILABLE</td>
             <% end %>
