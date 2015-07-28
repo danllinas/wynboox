@@ -13,8 +13,9 @@ class ExchangesController < ApplicationController
     @exchange = Exchange.new(exchange_params)
     if @exchange.save
       @exchange.book.status = "requested"
+      @exchange.book.save
       flash[:success] = "You requested the book!"
-      redirect_to exchange_path
+      redirect_to @exchange
     else
       flash[:alert] = "Something went wrong. Try agian."
       render books_path
